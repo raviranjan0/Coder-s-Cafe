@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-gradient: linear-gradient(90deg, #000000 0%, #333333 50%, #ffffff 100%);
+  --primary-gradient-reverse: linear-gradient(90deg, #ffffff 0%, #cccccc 50%, #000000 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Perspective and tilt effect */
+.perspective {
+  perspective: 1000px;
+}
+
+.group:hover .group-hover\:tilt {
+  transform: rotateX(5deg) rotateY(5deg);
+  transition: transform 0.3s ease;
+}
+
+/* Floating animation for code snippets */
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Pulse animation for CTA button */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(128, 128, 128, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(128, 128, 128, 0);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
